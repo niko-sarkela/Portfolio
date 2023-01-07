@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Gearbox configurator</title>
+		<script src="configurator_JS.js"></script>
+		<link rel="stylesheet" href="configurator_Styles.css">
+	</head>
+	<body>
+		<div id="container">
+			<div id="configurator">
+				<h2>Wheel size:</h2>
+				<form id="wheels">
+					<input type="text" id="tyreWidth">
+					<label>/</label>		
+					<input type="text" id="tyreProfile">
+					<label>R</label>
+					<input type="text" id="rimDiameter">
+				</form>
+				<h2>Gearing:</h2>
+				<form id="gearing" action="javascript:void(HandleForm());">
+					<label>Gear 1:</label>
+					<input type="text" id="g1">
+					<input type="radio" name="selectedGear" id="selectedGear1">
+					<br>
+					<label>Gear 2:</label>
+					<input type="text" id="g2">
+					<input type="radio" name="selectedGear" id="selectedGear2">
+					<br>
+					<label>Gear 3:</label>
+					<input type="text" id="g3">
+					<input type="radio" name="selectedGear" id="selectedGear3">
+					<br>
+					<label>Gear 4:</label>
+					<input type="text" id="g4">
+					<input type="radio" name="selectedGear" id="selectedGear4">
+					<br>
+					<label>Gear 5:</label>
+					<input type="text" id="g5">
+					<input type="radio" name="selectedGear" id="selectedGear5">
+					<br>
+					<label>Gear 6:</label>
+					<input type="text" id="g6">
+					<input type="radio" name="selectedGear" id="selectedGear6">
+					<br>
+					<label>Final drive:</label>
+					<input type="text" id="fd">	
+					<br>					
+					<input type="submit">
+				</form>
+				<br>
+				<label>RPM:</label>
+				<input type="text" id="rpm">
+				<label>Speed:</label>
+				<input type="text" id="speed">
+				<br>
+				<p id="calculatedSpeed">speed:</p>
+				<p id="calculatedRPM">RPM:</p>
+			</div>
+			<div id="transmissionList">
+				<h2>Transmissions</h2>
+				<table id="transmissions">
+					<tr>
+						<th>Family</th>
+						<th>Code</th>
+						<th>1st gear</th>
+						<th>2nd gear</th>
+						<th>3rd geat</th>
+						<th>4th gear</th>
+						<th>5th gear</th>
+						<th>6th gear</th>
+						<th>Final drive</th>		
+						<th>Selection</th>
+					</tr>
+					<tr>
+						<td>020</td>
+						<td>2H</td>
+						<td class="tableGear1st">3.45</td>
+						<td class="tableGear2nd">2.12</td>
+						<td class="tableGear3rd">1.44</td>
+						<td class="tableGear4th">1.13</td>
+						<td class="tableGear5th">0.91</td>
+						<td class="tableGear6th"></td>
+						<td class="tableFinalDrive">3.94</td>		
+						<td><a href="#" onclick="SelectTransmission(this);">Select</a></td>
+					</tr>
+					<tr>
+						<td>020</td>
+						<td>2Y</td>
+						<td class="tableGear1st">3.45</td>
+						<td class="tableGear2nd">2.12</td>
+						<td class="tableGear3rd">1.44</td>
+						<td class="tableGear4th">1.13</td>
+						<td class="tableGear5th">0.91</td>
+						<td class="tableGear6th"></td>
+						<td class="tableFinalDrive">3.67</td>		
+						<td><a href="#" onclick="SelectTransmission(this);">Select</a></td>
+					</tr>
+					<tr>
+						<td>020</td>
+						<td>4K</td>
+						<td class="tableGear1st">3.45</td>
+						<td class="tableGear2nd">2.12</td>
+						<td class="tableGear3rd">1.44</td>
+						<td class="tableGear4th">1.13</td>
+						<td class="tableGear5th">0.89</td>
+						<td class="tableGear6th"></td>
+						<td class="tableFinalDrive">3.94</td>		
+						<td><a href="#" onclick="SelectTransmission(this);">Select</a></td>
+					</tr>
+					<tr>
+						<td>020</td>
+						<td>4S</td>
+						<td class="tableGear1st">3.45</td>
+						<td class="tableGear2nd">1.94</td>
+						<td class="tableGear3rd">1.29</td>
+						<td class="tableGear4th">0.91</td>
+						<td class="tableGear5th">0.75</td>
+						<td class="tableGear6th"></td>
+						<td class="tableFinalDrive">3.94</td>		
+						<td><a href="#" onclick="SelectTransmission(this);">Select</a></td>
+					</tr>
+					<tr>
+						<td>020</td>
+						<td>4T</td>
+						<td class="tableGear1st">3.45</td>
+						<td class="tableGear2nd">1.94</td>
+						<td class="tableGear3rd">1.29</td>
+						<td class="tableGear4th">0.91</td>
+						<td class="tableGear5th">0.75</td>
+						<td class="tableGear6th"></td>
+						<td class="tableFinalDrive">3.67</td>		
+						<td><a href="#" onclick="SelectTransmission(this);">Select</a></td>
+					</tr>
+					<tr>
+						<td>020</td>
+						<td>4Y</td>
+						<td class="tableGear1st">3.45</td>
+						<td class="tableGear2nd">2.12</td>
+						<td class="tableGear3rd">1.44</td>
+						<td class="tableGear4th">1.13</td>
+						<td class="tableGear5th">0.89</td>
+						<td class="tableGear6th"></td>
+						<td class="tableFinalDrive">3.67</td>		
+						<td><a href="#" onclick="SelectTransmission(this);">Select</a></td>
+					</tr>
+					<tr>
+						<td>020</td>
+						<td>ACD</td>
+						<td class="tableGear1st">3.45</td>
+						<td class="tableGear2nd">2.12</td>
+						<td class="tableGear3rd">1.44</td>
+						<td class="tableGear4th">1.13</td>
+						<td class="tableGear5th">0.89</td>
+						<td class="tableGear6th"></td>
+						<td class="tableFinalDrive">3.67</td>		
+						<td><a href="#" onclick="SelectTransmission(this);">Select</a></td>
+					</tr>
+					<tr>
+						<td>020</td>
+						<td>AVX</td>
+						<td class="tableGear1st">3.45</td>
+						<td class="tableGear2nd">1.94</td>
+						<td class="tableGear3rd">1.29</td>
+						<td class="tableGear4th">0.91</td>
+						<td class="tableGear5th">0.75</td>
+						<td class="tableGear6th"></td>
+						<td class="tableFinalDrive">4.25</td>		
+						<td><a href="#" onclick="SelectTransmission(this);">Select</a></td>
+					</tr>
+					<tr>
+						<td>02A</td>
+						<td>CHA</td>
+						<td class="tableGear1st">3.778</td>
+						<td class="tableGear2nd">2.118</td>
+						<td class="tableGear3rd">1.360</td>
+						<td class="tableGear4th">1.090</td>
+						<td class="tableGear5th">0.717</td>
+						<td class="tableGear6th"></td>
+						<td class="tableFinalDrive">3.944</td>		
+						<td><a href="#" onclick="SelectTransmission(this);">Select</a></td>
+					</tr>
+					<tr>
+						<td>02J</td>
+						<td>CZM</td>
+						<td class="tableGear1st">3.300</td>
+						<td class="tableGear2nd">1.944</td>
+						<td class="tableGear3rd">1.308</td>
+						<td class="tableGear4th">1.029</td>
+						<td class="tableGear5th">0.837</td>
+						<td class="tableGear6th"></td>
+						<td class="tableFinalDrive">4.235</td>		
+						<td><a href="#" onclick="SelectTransmission(this);">Select</a></td>
+					</tr>
+					<tr>
+						<td>02J</td>
+						<td>EBD</td>
+						<td class="tableGear1st">3.300</td>
+						<td class="tableGear2nd">1.944</td>
+						<td class="tableGear3rd">1.308</td>
+						<td class="tableGear4th">1.029</td>
+						<td class="tableGear5th">0.837</td>
+						<td class="tableGear6th"></td>
+						<td class="tableFinalDrive">4.235</td>		
+						<td><a href="#" onclick="SelectTransmission(this);">Select</a></td>
+					</tr>
+					<tr>
+						<td>02J</td>
+						<td>DZQ, EBP, EGT, EKG</td>
+						<td class="tableGear1st">3.778</td>
+						<td class="tableGear2nd">2.118</td>
+						<td class="tableGear3rd">1.360</td>
+						<td class="tableGear4th">1.029</td>
+						<td class="tableGear5th">0.837</td>
+						<td class="tableGear6th"></td>
+						<td class="tableFinalDrive">4.235</td>		
+						<td><a href="#" onclick="SelectTransmission(this);">Select</a></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</body>
+</html>
